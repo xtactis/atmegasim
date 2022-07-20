@@ -505,7 +505,8 @@ int main(int argc, char **argv) {
     u8 pa = *PORTA;
     for (u16 pc = 0; pc < Kilobytes(16); ++pc) {
 #ifdef DEBUG
-        printf("PC: 0x%04X\n", pc);
+        display_state();
+        printf("PC: 0x%04X\n", pc*2);
         printf("total clocks: %llu\nREGS: ", total_clocks);
         for (u16 reg = 0; reg < 32; ++reg) {
             printf("0x%02X ", registers[reg]);
